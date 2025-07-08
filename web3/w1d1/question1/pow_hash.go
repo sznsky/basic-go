@@ -30,7 +30,7 @@ func findTarget(nickname, target string, zeros int) {
 		data := fmt.Sprintf("%s%d", nickname, nonce)
 		// 计算sha256哈希值
 		hash := sha256.Sum256([]byte(data))
-		// 将哈希值进行编码
+		// 将哈希值进行编码, hash[:] 将数组转为切片
 		hashString = hex.EncodeToString(hash[:])
 
 		// 检查是否满足目标条件
